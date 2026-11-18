@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="login">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<div class="caja caja-login">
+    <h1>Entrar</h1>
+
+    <p class="aviso-demo">Ojo: esto es un prototipo. No hay un servidor de verdad, todo se guarda en este navegador.</p>
+
+    <p id="msg-login" role="alert"></p>
+
+    <form id="form-login" novalidate>
+        <div class="caja-errores" role="alert"></div>
+
+        <p class="etiqueta">¿Quién eres?</p>
+        <div class="opciones">
+            <label class="opcion"><input type="radio" name="perfil" value="adulto" required data-nombre="¿Quién eres?" checked> Adulto mayor o familiar</label>
+            <label class="opcion"><input type="radio" name="perfil" value="estudiante" required data-nombre="¿Quién eres?"> Alumno</label>
+            <label class="opcion"><input type="radio" name="perfil" value="coordinador" required data-nombre="¿Quién eres?"> Coordinación</label>
+        </div>
+
+        <div class="campo">
+            <label for="usuario">Correo o teléfono</label>
+            <input type="text" id="usuario" name="usuario" required autocomplete="username">
+        </div>
+
+        <div class="campo">
+            <label for="clave">Contraseña</label>
+            <input type="password" id="clave" name="clave" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn-grande ancho">Entrar</button>
+    </form>
+
+    <p>¿Es tu primera vez? <a href="registro.html">Crea tu cuenta aquí</a></p>
+</div>
+
+<div class="caja caja-login">
+    <h2>Usuarios de prueba</h2>
+    <p>Si solo quieres probar, entra con alguno de estos. La contraseña de todos es <strong>12345</strong>.</p>
+    <button type="button" class="btn-secundario ancho btn-demo" data-perfil="adulto" data-correo="rosa@demo.mx">Rosa, adulta mayor</button>
+    <button type="button" class="btn-secundario ancho btn-demo" data-perfil="adulto" data-correo="jorge@demo.mx">Jorge, familiar de Rosa y Manuel</button>
+    <button type="button" class="btn-secundario ancho btn-demo" data-perfil="estudiante" data-correo="daniela@demo.mx">Daniela, alumna validada</button>
+    <button type="button" class="btn-secundario ancho btn-demo" data-perfil="estudiante" data-correo="carlos@demo.mx">Carlos, alumno por validar</button>
+    <button type="button" class="btn-secundario ancho btn-demo" data-perfil="coordinador" data-correo="coordinacion@demo.mx">Lucía, coordinación</button>
+
+    <p class="ayuda-campo">Si ya hiciste muchas pruebas, puedes dejar todo como estaba al principio.</p>
+    <button type="button" id="btn-reiniciar" class="btn-peligro" data-confirmar="Se van a borrar las solicitudes y cuentas que creaste. ¿Seguir?">Reiniciar datos de prueba</button>
+</div>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

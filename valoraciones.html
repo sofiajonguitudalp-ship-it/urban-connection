@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="valoraciones" data-roles="adulto,familiar,estudiante,coordinador">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<h1>Calificaciones</h1>
+
+<div id="por-calificar" class="caja oculto"></div>
+
+<div id="zona-calificar" class="caja oculto">
+    <h2>¿Cómo te fue?</h2>
+    <p id="datos-calificar"></p>
+
+    <form id="form-valorar" novalidate>
+        <div class="caja-errores" role="alert"></div>
+
+        <p class="etiqueta">¿Qué calificación le das?</p>
+        <div class="elegir-estrellas">
+            <label><input type="radio" name="estrellas" value="1" required data-nombre="Calificación"><br><span class="estrellas" aria-hidden="true">★</span><br>Muy mal</label>
+            <label><input type="radio" name="estrellas" value="2" required data-nombre="Calificación"><br><span class="estrellas" aria-hidden="true">★★</span><br>Mal</label>
+            <label><input type="radio" name="estrellas" value="3" required data-nombre="Calificación"><br><span class="estrellas" aria-hidden="true">★★★</span><br>Regular</label>
+            <label><input type="radio" name="estrellas" value="4" required data-nombre="Calificación"><br><span class="estrellas" aria-hidden="true">★★★★</span><br>Bien</label>
+            <label><input type="radio" name="estrellas" value="5" required data-nombre="Calificación"><br><span class="estrellas" aria-hidden="true">★★★★★</span><br>Excelente</label>
+        </div>
+
+        <div class="campo">
+            <label for="comentario">Cuéntanos un poco más (opcional)</label>
+            <textarea id="comentario" maxlength="300" placeholder="Ej. fue muy amable y llegó a tiempo"></textarea>
+        </div>
+
+        <button type="submit" class="btn-grande ancho">Enviar calificación</button>
+    </form>
+</div>
+
+<h2 id="titulo-lista">Calificaciones de los alumnos</h2>
+<div id="lista-valoraciones"></div>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

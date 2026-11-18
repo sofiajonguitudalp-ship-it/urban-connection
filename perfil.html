@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="perfil" data-roles="adulto,familiar,estudiante,coordinador">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<h1>Mi perfil</h1>
+
+<div class="caja">
+    <p><strong>Tipo de cuenta:</strong> <span id="rol-texto"></span></p>
+    <p id="msg-perfil" role="status"></p>
+
+    <form id="form-perfil" novalidate>
+        <div class="caja-errores" role="alert"></div>
+
+        <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" required>
+        </div>
+        <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" required>
+        </div>
+        <div class="campo">
+            <label for="telefono">Teléfono celular</label>
+            <input type="tel" id="telefono" maxlength="10" required data-tipo="telefono">
+        </div>
+
+        <div id="sec-alumno" class="oculto">
+            <div id="datos-alumno"></div>
+            <div class="campo">
+                <label for="horario">Días y horarios disponibles</label>
+                <input type="text" id="horario">
+            </div>
+        </div>
+
+        <button type="submit" class="btn-grande">Guardar cambios</button>
+    </form>
+</div>
+
+<!-- Personas mayores -->
+<section id="sec-personas" class="oculto">
+    <h2 id="titulo-personas">Mis familiares</h2>
+    <div id="lista-personas"></div>
+
+    <form id="form-persona" class="caja" novalidate>
+        <h3>Registrar a una persona mayor</h3>
+        <p id="msg-persona" role="status"></p>
+        <div class="caja-errores" role="alert"></div>
+
+        <div class="campo">
+            <label for="p-nombre">Nombre completo *</label>
+            <input type="text" id="p-nombre" required>
+        </div>
+        <div class="campo">
+            <label for="p-edad">Edad *</label>
+            <input type="number" id="p-edad" min="60" max="120" required data-edad-minima="60">
+        </div>
+        <div class="campo">
+            <label for="p-telefono">Teléfono</label>
+            <input type="tel" id="p-telefono" maxlength="10" data-tipo="telefono">
+        </div>
+        <div class="campo">
+            <label for="p-direccion">Dirección *</label>
+            <input type="text" id="p-direccion" required placeholder="Calle, número y colonia">
+        </div>
+        <div class="campo">
+            <label for="p-notas">¿Algo que el acompañante deba saber?</label>
+            <textarea id="p-notas" placeholder="Ej. usa bastón, camina despacio"></textarea>
+        </div>
+        <button type="submit" class="btn-grande">Registrar</button>
+    </form>
+</section>
+
+<button type="button" id="btn-cerrar" class="btn-peligro">Cerrar sesión</button>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

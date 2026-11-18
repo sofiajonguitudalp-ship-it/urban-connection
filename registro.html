@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="registro">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<div class="caja caja-login">
+    <h1>Crear cuenta</h1>
+    <p>Son pocos datos, no tardas nada.</p>
+
+    <p id="msg-registro" role="alert"></p>
+
+    <form id="form-registro" novalidate>
+        <div class="caja-errores" role="alert"></div>
+
+        <p class="etiqueta">¿Quién eres?</p>
+        <div class="opciones">
+            <label class="opcion"><input type="radio" name="tipo" value="adulto" required data-nombre="¿Quién eres?" checked> Persona mayor</label>
+            <label class="opcion"><input type="radio" name="tipo" value="familiar" required data-nombre="¿Quién eres?"> Familiar</label>
+            <label class="opcion"><input type="radio" name="tipo" value="estudiante" required data-nombre="¿Quién eres?"> Alumno</label>
+        </div>
+
+        <div class="campo">
+            <label for="nombre">Tu nombre completo </label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <!-- Persona mayor -->
+        <fieldset id="sec-mayor" class="caja">
+            <legend><strong id="titulo-mayor">Tus datos</strong></legend>
+            <div class="campo solo-familiar">
+                <label for="nombre-mayor">Nombre de tu familiar *</label>
+                <input type="text" id="nombre-mayor" required>
+            </div>
+            <div class="campo solo-familiar">
+                <label for="telefono-mayor">Teléfono de tu familiar</label>
+                <input type="tel" id="telefono-mayor" maxlength="10" data-tipo="telefono">
+            </div>
+            <div class="campo">
+                <label for="edad">Edad </label>
+                <input type="number" id="edad" min="60" max="120" required data-edad-minima="60">
+            </div>
+            <div class="campo">
+                <label for="direccion">Dirección de la casa </label>
+                <input type="text" id="direccion" required placeholder="Calle, número y colonia">
+            </div>
+            <div class="campo">
+                <label for="notas">¿Algo que el acompañante deba saber?</label>
+                <textarea id="notas" placeholder="Ej. usa bastón, camina despacio, escucha poco"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Alumno -->
+        <fieldset id="sec-alumno" class="caja oculto">
+            <legend><strong>Datos escolares</strong></legend>
+            <div class="campo">
+                <label for="nacimiento">Fecha de nacimiento </label>
+                <input type="date" id="nacimiento" required data-mayor-edad="1">
+            </div>
+            <div class="campo">
+                <label for="escuela">Escuela o facultad </label>
+                <input type="text" id="escuela" required placeholder="Ej. UANL, Facultad de Trabajo Social">
+            </div>
+            <div class="campo">
+                <label for="matricula">Matrícula </label>
+                <input type="text" id="matricula" required>
+            </div>
+            <div class="campo">
+                <label for="horario">¿Qué días y horarios puedes acompañar?</label>
+                <input type="text" id="horario" placeholder="Ej. lunes y miércoles en la mañana">
+            </div>
+            <div class="campo">
+                <label for="credencial">Foto de tu credencial escolar </label>
+                <input type="file" id="credencial" accept=".jpg,.jpeg,.png,.pdf" required>
+                <p class="ayuda-campo">La coordinación la revisa antes de asignarte servicios.</p>
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <label for="correo">Correo electrónico </label>
+            <input type="email" id="correo" required>
+        </div>
+
+        <div class="campo">
+            <label for="telefono">Tu teléfono celular </label>
+            <input type="tel" id="telefono" maxlength="10" required data-tipo="telefono">
+            <p class="ayuda-campo">10 números, sin espacios. También sirve para entrar.</p>
+        </div>
+
+        <div class="campo">
+            <label for="clave">Contraseña </label>
+            <input type="password" id="clave" required data-tipo="clave">
+        </div>
+
+        <div class="campo">
+            <label for="clave2">Repite la contraseña </label>
+            <input type="password" id="clave2" required data-igual="clave">
+        </div>
+
+        <div class="campo-check">
+            <input type="checkbox" id="acepto" required data-nombre="Falta aceptar el aviso de privacidad.">
+            <label for="acepto">Leí el <a href="aviso.html" target="_blank">aviso de privacidad</a> y acepto que mis datos se usen solo para organizar los acompañamientos.</label>
+        </div>
+
+        <button type="submit" class="btn-grande ancho">Crear cuenta</button>
+    </form>
+
+    <p>¿Ya tienes cuenta? <a href="login.html">Entra aquí</a></p>
+</div>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

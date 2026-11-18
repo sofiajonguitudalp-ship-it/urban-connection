@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso de privacidad | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="aviso">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<div class="caja">
+    <h1>Aviso de privacidad</h1>
+    <p>Urban Connection es un prototipo escolar. En las pruebas solo usamos datos inventados y todo se guarda en tu propio navegador.</p>
+
+    <h2>¿Qué datos pedimos?</h2>
+    <p>Solo los necesarios para organizar un acompañamiento: nombre, teléfono, correo, dirección de la persona mayor, datos escolares de los alumnos y la lista de cosas de cada salida.</p>
+
+    <h2>¿Para qué los usamos?</h2>
+    <ul>
+        <li>Para juntar a la persona mayor con un alumno verificado.</li>
+        <li>Para que la familia vea en qué va el servicio.</li>
+        <li>Para llevar la cuenta de las horas de servicio social.</li>
+        <li>Para atender cualquier problema que se presente.</li>
+    </ul>
+
+    <h2>¿Quién los ve?</h2>
+    <p>Cada quien ve solo lo que le toca. El alumno ve los datos del servicio que tiene asignado y la coordinación ve todo para poder supervisar.</p>
+
+    <h2>Tus derechos</h2>
+    <p>Puedes pedir que corrijamos o borremos tus datos cuando quieras. Solo comunícate con la coordinación.</p>
+
+    <p class="ayuda-campo">Tomamos como referencia la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+</div>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

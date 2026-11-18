@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="inicio">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<section class="portada">
+    <img src="img/logo.svg" class="logo-grande" alt="Logotipo de Urban Connection">
+    <h1>Te acompañamos a tus citas y trámites</h1>
+    <p>Alumnos de servicio social, revisados por su escuela, te acompañan al doctor, al banco, a cobrar tu pensión o al súper.</p>
+
+    <p id="con-sesion" class="oculto">Ya entraste como <strong id="nombre-sesion"></strong>. <a href="panel.html">Ir a mi panel</a></p>
+
+    <div class="elegir">
+        <a href="login.html?perfil=adulto">
+            <img src="img/persona.svg" class="icono" alt="">
+            Soy adulto mayor o familiar
+            <small>Quiero pedir un acompañamiento</small>
+        </a>
+        <a href="login.html?perfil=estudiante" class="segundo">
+            <img src="img/alumno.svg" class="icono" alt="">
+            Soy alumno
+            <small>Quiero hacer mi servicio social</small>
+        </a>
+    </div>
+</section>
+
+<section class="caja" id="como">
+    <h2>¿Cómo funciona?</h2>
+    <ol class="pasos-como">
+        <li><strong>Te registras</strong> tú o un familiar. Si no usas mucho el celular, la coordinación lo hace por ti.</li>
+        <li><strong>Pides el acompañamiento:</strong> qué vas a hacer, qué día y a dónde vas.</li>
+        <li><strong>La coordinación te asigna un alumno.</strong> Vas a ver su nombre y qué calificación tiene.</li>
+        <li><strong>Se ven en tu casa.</strong> Le das tu código de 4 números y revisan juntos tu lista de cosas.</li>
+        <li><strong>Te acompaña</strong> en el camino y en el trámite. Tu familia puede ver en qué va.</li>
+        <li><strong>Regresas a casa,</strong> revisan que no se te quede nada y nos dices cómo te fue.</li>
+    </ol>
+</section>
+
+<section class="aviso-alcance">
+    <h2>Antes de empezar</h2>
+    <p>Esto <strong>no es un servicio médico, ni de cuidados permanentes, ni de transporte.</strong> El alumno va contigo caminando o en camión, te ayuda con tus cosas y se asegura de que llegues bien a tu casa.</p>
+</section>
+
+<p class="centrado"><a href="login.html?perfil=coordinador">Acceso para coordinación</a></p>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

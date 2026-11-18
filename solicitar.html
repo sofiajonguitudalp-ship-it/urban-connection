@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir acompañamiento | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="solicitar" data-roles="adulto,familiar,coordinador">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<h1>Pedir acompañamiento</h1>
+
+<div id="sin-adultos" class="aviso-alcance oculto">
+    <p>Antes de pedir un acompañamiento hay que registrar a la persona mayor.</p>
+    <a href="perfil.html" class="btn-grande">Registrar persona mayor</a>
+</div>
+
+<ol class="pasos" id="indicador">
+    <li>1. Qué</li>
+    <li>2. Cuándo</li>
+    <li>3. Dónde</li>
+    <li>4. Revisar</li>
+</ol>
+
+<form id="form-solicitud" class="caja" novalidate>
+    <div class="caja-errores" role="alert"></div>
+
+    <!-- Paso 1 -->
+    <div class="paso-form">
+        <div class="campo">
+            <label for="para">¿Para quién es?</label>
+            <select id="para" required></select>
+        </div>
+
+        <p class="etiqueta">¿Qué vas a hacer?</p>
+        <div class="opciones">
+            <label class="opcion"><input type="radio" name="tipo" value="cita" required data-nombre="¿Qué vas a hacer?"><img src="img/salud.svg" class="icono" alt=""> Cita médica</label>
+            <label class="opcion"><input type="radio" name="tipo" value="banco" required data-nombre="¿Qué vas a hacer?"><img src="img/banco.svg" class="icono" alt=""> Banco o pensión</label>
+            <label class="opcion"><input type="radio" name="tipo" value="compras" required data-nombre="¿Qué vas a hacer?"><img src="img/compras.svg" class="icono" alt=""> Compras</label>
+            <label class="opcion"><input type="radio" name="tipo" value="otra" required data-nombre="¿Qué vas a hacer?"><img src="img/documento.svg" class="icono" alt=""> Otro trámite</label>
+        </div>
+
+        <div class="campo">
+            <label for="motivo">Cuéntanos en pocas palabras</label>
+            <input type="text" id="motivo" required maxlength="100" placeholder="Ej. cita con el cardiólogo, cobrar mi pensión">
+        </div>
+
+        <button type="button" class="btn-grande" data-siguiente>Siguiente</button>
+        <a href="panel.html" class="btn-secundario">Cancelar</a>
+    </div>
+
+    <!-- Paso 2 -->
+    <div class="paso-form oculto">
+        <div class="campo">
+            <label for="fecha">¿Qué día?</label>
+            <input type="date" id="fecha" required data-futura="1">
+        </div>
+        <div class="campo">
+            <label for="hora">¿A qué hora necesitas salir de casa?</label>
+            <input type="time" id="hora" required>
+            <p class="ayuda-campo">Calcula un rato extra para llegar sin prisa.</p>
+        </div>
+        <button type="button" class="btn-grande" data-siguiente>Siguiente</button>
+        <button type="button" class="btn-secundario" data-atras>Atrás</button>
+    </div>
+
+    <!-- Paso 3 -->
+    <div class="paso-form oculto">
+        <div class="campo">
+            <label for="origen">¿Dónde te recogen?</label>
+            <input type="text" id="origen" required>
+        </div>
+        <div class="campo">
+            <label for="destino">¿A dónde vas?</label>
+            <input type="text" id="destino" required placeholder="Ej. Clínica 33 del IMSS">
+        </div>
+        <div class="campo">
+            <label for="notas">¿Algo más que debamos saber? (opcional)</label>
+            <textarea id="notas" placeholder="Ej. es en el segundo piso"></textarea>
+        </div>
+        <button type="button" class="btn-grande" data-siguiente>Siguiente</button>
+        <button type="button" class="btn-secundario" data-atras>Atrás</button>
+    </div>
+
+    <!-- Paso 4 -->
+    <div class="paso-form oculto">
+        <h2>Revisa que todo esté bien</h2>
+        <p><strong>Para:</strong> <span id="res-para"></span></p>
+        <p><strong>Qué:</strong> <span id="res-tipo"></span></p>
+        <p><strong>Motivo:</strong> <span id="res-motivo"></span></p>
+        <p><strong>Cuándo:</strong> <span id="res-fecha"></span></p>
+        <p><strong>Sale de:</strong> <span id="res-origen"></span></p>
+        <p><strong>Va a:</strong> <span id="res-destino"></span></p>
+        <p><strong>Notas:</strong> <span id="res-notas"></span></p>
+        <button type="submit" class="btn-grande">Enviar solicitud</button>
+        <button type="button" class="btn-secundario" data-atras>Cambiar algo</button>
+    </div>
+</form>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

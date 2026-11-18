@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de pertenencias | Urban Connection</title>
+    <link rel="icon" href="img/logo.svg">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="letra-1" data-pagina="checklist" data-roles="adulto,familiar,estudiante,coordinador">
+
+<a href="#contenido" class="saltar">Ir al contenido</a>
+
+<!-- Accesibilidad -->
+<div class="barra-acceso" aria-label="Opciones de accesibilidad">
+    <span>Letra:</span>
+    <button type="button" id="btn-menos" class="btn-acceso" aria-label="Hacer la letra más chica">A−</button>
+    <button type="button" id="btn-mas" class="btn-acceso" aria-label="Hacer la letra más grande">A+</button>
+    <button type="button" id="btn-contraste" class="btn-acceso" aria-pressed="false">Alto contraste</button>
+    <button type="button" id="btn-leer" class="btn-acceso" aria-pressed="false">Leer texto</button>
+</div>
+
+<!-- Menú -->
+<header class="encabezado">
+    <a href="index.html" class="logo"><img src="img/logo.svg" alt=""> <span>Urban <span class="logo-c">Connection</span></span></a>
+    <nav id="menu" class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Entrar</a>
+    </nav>
+</header>
+
+<p id="saludo" class="saludo oculto"></p>
+
+<main id="contenido" class="contenido">
+
+<h1>Lista de pertenencias</h1>
+
+<div id="checklist">
+    <p id="datos-lista"></p>
+
+    <div class="caja">
+        <p id="instrucciones-lista">Antes de salir, palomeen juntos la columna <strong>Salida</strong>. Al volver a casa, palomeen <strong>Regreso</strong> para estar seguros de que no se quedó nada.</p>
+
+        <p id="msg-lista" role="status"></p>
+
+        <div class="tabla-scroll">
+            <table class="tabla-objetos">
+                <thead>
+                    <tr>
+                        <th>Cosa</th>
+                        <th class="centro">Salida</th>
+                        <th class="centro">Regreso</th>
+                        <th class="centro" id="col-quitar">Quitar</th>
+                    </tr>
+                </thead>
+                <tbody id="filas-lista"></tbody>
+            </table>
+        </div>
+
+        <p>Al salir: <strong id="cuenta-salida"></strong> · Al regresar: <strong id="cuenta-regreso"></strong></p>
+
+        <div id="zona-agregar">
+            <div class="campo separado">
+                <label for="nuevo-objeto">Agregar otra cosa</label>
+                <input type="text" id="nuevo-objeto" maxlength="60" placeholder="Ej. lentes, paraguas, medicinas">
+            </div>
+            <button type="button" id="btn-agregar" class="btn-grande">Agregar a la lista</button>
+        </div>
+    </div>
+
+    <a href="seguimiento.html" id="link-seguimiento" class="btn-secundario">Ver cómo va el acompañamiento</a>
+</div>
+</main>
+
+<!-- Pie de página -->
+<footer class="pie">
+    <p><strong>Urban Connection</strong> · Acompañamiento comunitario para personas mayores</p>
+    <p>No sustituye atención médica, cuidados permanentes ni transporte. En una emergencia llama al <strong>911</strong>.</p>
+    <p>Prototipo escolar. El acceso es de prueba y los datos se quedan en este navegador.</p>
+    <p><a href="aviso.html">Aviso de privacidad</a></p>
+</footer>
+
+<script src="datos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
